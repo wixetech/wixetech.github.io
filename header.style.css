@@ -1,0 +1,380 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(32, 32, 32);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-y: hidden;
+}
+
+header {
+    position: relative;
+    top: 0px;
+    height: 80px;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    padding: 4px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: headeranimation 0.75s ease-out;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.65);
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 10000;
+}
+
+header .nav {
+    display: flex;
+}
+
+header .navButton
+{
+    display: none;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border-radius: 16px;
+    background-color: rgb(24, 24, 24);
+    transform: translate(-135%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+    border: none;
+    transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.MobileView header .navButton:hover {
+    transform: translate(-135%, -50%) scale(1.1);
+    filter: brightness(1.1);
+}
+
+.MobileView header .navButton:active {
+    transform: translate(-135%, -50%) scale(0.9);
+    filter: brightness(0.8);
+    transition: filter 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.MobileView header .navButton
+{
+    display: block;
+}
+
+.MobileView header .navButton .line {
+    height: 4px;
+    width: 28px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 8px;
+}
+
+.MobileView header .nav
+{
+    display: none;
+    background-color: rgb(32, 32, 32);
+    padding: 16px;
+    border-radius: 16px;
+    width: 175px;
+    position: absolute;
+    top: 104px;
+    left: 100%;
+    z-index: 9999;
+    transform: translate(-110%, 0%);
+    box-shadow: 0px 0px 5px black;
+    text-align: right;
+    animation: hideMobileViewNav 0.2s ease-in;
+}
+
+.MobileView header .nav.show {
+    display: block;
+    animation: showMobileViewNav 0.2s ease-out;
+}
+
+@keyframes hideMobileViewNav {
+    0% {
+        display: block;
+        top: 104px;
+        opacity: 1;
+    }
+    100% {
+        display: block;
+        top: 76px;
+        opacity: 0;
+    }
+}
+
+@keyframes showMobileViewNav {
+    0% {
+        display: block;
+        top: 76px;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        top: 104px;
+        opacity: 1;
+    }
+}
+
+.MobileView header .nav .separator
+{
+    width: 0px;
+    height: 0px;
+}
+
+.MobileView header .nav * {
+    margin: 16px;
+}
+
+header .nav * {
+    margin: 8px;
+}
+
+header .space {
+    width: 20%;
+}
+
+.MobileView header .space {
+    display: none;
+}
+
+header .nav a {
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-weight: light;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.6;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
+    transition: filter 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+header .nav a:hover {
+    opacity: 0.8;
+    transform: scale(1.075) rotate(2.5deg);
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+}
+
+header .nav a:active {
+    transition: filter 0.1s ease-in-out, color 0.1s ease-in-out, font-weight 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.1s ease-in-out;
+    transform: scale(0.9, 0.8) rotate(-2.5deg);
+    color: rgb(186, 227, 255);
+    filter: drop-shadow(0px 0px 5px rgb(186, 227, 255, 0.8)) brightness(0.65);
+}
+
+header .nav a.selected {
+    color: rgb(138, 208, 255);
+    filter: drop-shadow(0px 0px 15px rgb(138, 208, 255));
+    opacity: 0.9;
+    font-weight: bold;
+}
+
+header .nav a.selected:hover {
+    opacity: 1;
+    filter: drop-shadow(0px 0px 15px rgb(138, 208, 255));
+}
+
+header .nav a.selected:active {
+    transition: filter 0.1s ease-in-out, color 0.1s ease-in-out, font-weight 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.1s ease-in-out;
+    filter: drop-shadow(0px 0px 15px rgb(138, 208, 255)) brightness(0.65);
+}
+
+header .separator {
+    background-color: white;
+    width: 1px;
+    height: 24px;
+    border-radius: 0.1px;
+    opacity: 0.3;
+}
+
+@keyframes headeranimation {
+    0% {
+        top: -80px;
+    }
+}
+
+.MobileView .logo {
+    position: absolute;
+    left: 10px;
+    top: -4px;
+}
+
+.logo
+{
+    margin: 15px;
+    opacity: 0.8;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    animation: logoshowanimation 0.5s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+}
+
+.logo:active {
+    opacity: 0.5;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    transform: scale(0.8) rotate(2deg);
+}
+
+.logo, .logo *
+{
+    height: 64px;
+    text-decoration: none;
+}
+
+.logo .line
+{
+    z-index: 0;
+    position: absolute;
+    top: 50px;
+    transform: translate(40px, 0);
+    height: 4px;
+    width: 135px;
+    border-radius: 2px;
+    background-color: white;
+    animation: logolineshowanimation 0.7s ease-out;
+}
+
+.logo img {
+    z-index: 15;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+}
+
+.logo text
+{
+    z-index: 5;
+    position: relative;
+    top: -22px;
+    left: 0px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: white;
+    animation: logotextshowanimation 0.6s 0.15s ease-in-out, hideanimation 0.15s linear;
+}
+
+body.IESupport .logo text {
+    transform: translate(70px, -40px);
+}
+
+.socialsbuttonshadow
+{
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    animation: socialsbuttonsshowup 0.5s ease-out, hideanimation 0s linear;
+}
+
+.socialsbuttonshadow.youtube { filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.45)); animation-delay: 0.3s, 0s; animation-duration: 0.5s, 0.3s; }
+.socialsbuttonshadow.telegram { filter: drop-shadow(0px 0px 10px rgba(0, 183, 255, 0.45)); animation-delay: 0.45s, 0s; animation-duration: 0.5s, 0.45s; }
+.socialsbuttonshadow.twitter { filter: drop-shadow(0px 0px 10px rgba(0, 140, 255, 0.45)); animation-delay: 0.6s, 0s; animation-duration: 0.5s, 0.6s; }
+
+.socialsbuttons a:hover .socialsbuttonshadow
+{
+    opacity: 1;
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.socialsbuttons a:active .socialsbuttonshadow
+{
+    opacity: 0.8;
+    transform: scale(0.8) rotate(5deg);
+}
+
+@keyframes socialsbuttonsshowup {
+    0% {
+        transform: scale(0.5) translate(-20px, 30px) rotate(65deg);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.3) translate(0, 0) rotate(-15deg);
+        opacity: 0.9;
+    }
+}
+
+@keyframes socialsbuttonsmainshowups {
+    0% {
+        transform: translate(-50%, 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes logotextshowanimation {
+    0% {
+        top: -7px;
+        left: 0px;
+        position: relative;
+        opacity: 0;
+    }
+    50% {
+        top: -30px;
+        left: 0px;
+        position: relative;
+        opacity: 1;
+    }
+    75% {
+        top: -18px;
+        left: 0px;
+        position: relative;
+    }
+}
+
+@keyframes hideanimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes logolineshowanimation {
+    0% {
+        width: 0px;
+    }
+}
+
+@keyframes logoshowanimation {
+    0% {
+        transform: rotate(25deg) translate(-15px, -15px);
+    }
+}
+
+.socialsbuttons {
+    position: relative;
+    top: 3px;
+}
+
+.socialsbuttons *
+{
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none;
+    color: transparent;
+    text-decoration: none;
+}
+
+.warning {
+    z-index: 9959;
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    background-color: rgb(122, 122, 0);
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+}
+
+.warning text {
+    position: relative;
+    top: 15%;
+}

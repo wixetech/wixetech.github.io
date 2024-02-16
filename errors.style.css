@@ -1,0 +1,23 @@
+.errtitle {
+    color: rgb(175, 230, 255);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.errtext {
+    font-size: 16px;
+    font-weight: light;
+}
+
+.errnormal {
+    font-weight: normal;
+}
+
+#errors .error {
+    color: white;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}

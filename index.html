@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LiDNY - Home!</title>
+
+        <!-- Koteyka was here... -->
+
+        <meta name="description" content="LiDNY's official website! Here you can download some our software like LiDNY CurChecker, LiDNY DCL or try our Windows modifications.">
+
+        <!-- Google fonts... -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon... -->
+
+        <link rel="icon" href="Assets/logo.svg" type="image/svg+xml">
+
+        <!-- Styles... -->
+
+        <link rel="stylesheet" href="header.style.css">
+        <link rel="stylesheet" href="footer.style.css">
+        <link rel="stylesheet" href="content.style.css">
+        <link rel="stylesheet" href="errors.style.css">
+
+        <style>
+            .hidden {
+                display: none;
+            }
+
+            #sorrybutyourscreentoosmall
+            {
+                font-family: "Inter", sans-serif;
+                font-weight: light;
+                color: white;
+                font-size: 26px;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+        </style>
+
+        <!-- IE support mode... -->
+
+        <script>
+            window.isIE = true;
+            document.addEventListener("DOMContentLoaded", function() {
+                if (!(window.navigator.userAgent.search("Trident") != -1 || window.navigator.userAgent.search("MSIE") != -1))
+                {
+                    window.isIE = false;
+                    document.body.classList.remove("IESupport");
+                }
+				else
+				{
+                    document.title += " (IE)"
+				}
+            })
+        </script>
+
+        <!-- Scripts... -->
+
+        <script src="main.script.js"></script>
+    </head>
+    <body class="IESupport">
+        <script> document.body.classList.add("hidden"); </script>
+        <div id="bodycontent">
+            <header>
+                <a class="logo" href="https://www.lidny.online/">
+                    <div class="line"></div>
+                    <img src="Assets/logo.svg" alt="LiDNY!">
+                    <text>LiDNY</text>
+                </a>
+                <div class="socialsbuttons">
+                    <a title="Our youtube!" href="https://www.youtube.com/channel/UCVREDtO1rSDTHj6EMjLOvTg" target="_blank">
+                        <img class="socialsbuttonshadow youtube" src="Assets/youtube.png" alt="Youtube">
+                    </a>
+                    <a title="Our telegram!" href="https://t.me/lidny_offical" target="_blank">
+                        <img class="socialsbuttonshadow telegram" src="Assets/telegram.png" alt="Telegram">
+                    </a>
+                    <a title="Our twitter!" href="https://twitter.com/windowskoteyka" target="_blank">
+                        <img class="socialsbuttonshadow twitter" src="Assets/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+                <div class="space"></div>
+                <div class="nav">
+                    <a title="Our home page!" href="#home" class="selected" id="home_hl">Home</a><div class="separator"></div>
+                    <a title="Our software!" href="#oursoftware" id="software_hl">Our software</a><div class="separator"></div>
+                    <a title="Donate!" href="#donation" id="donation_hl">Donation</a>
+                </div>
+                <button class="navButton" onclick="showOrHideNavigationMobile()">
+                    <div class="line _0"></div>
+                    <div class="line _1"></div>
+                    <div class="line _2"></div>
+                </button>
+            </header>
+            <div class="warning hidden" id="resolutionwarning"><text>Warning! With your current resolution, the page can be broken!</text></div>
+            <div class="content">
+                <div id="errors">
+                    <div class="javascripterror error">
+                        <text class="errtitle">Oops... We are sorry, but we can't load our page completely...<br></text>
+                        <text class="errtext">If you are using Internet Explorer please allow loading of ActiveX elements to enable JavaScript on this page.<br>So, check if JavaScript is enabled in your browser, if not please enable it.<br><text>If your browser does not support JavaScript, please update your browser.</text></text>
+                        <br><br>
+                        <img src="Assets/ActiveXControlsIE.png">
+                    </div>
+                    <div class="connectionerror error hidden">
+                        <text class="errtitle">Oops...<br></text>
+                        <text class="errtext">We can't get some HTMLs to put them as content on our page.<br>Check your Internet connection.</text>
+                    </div>
+                    <div class="notfound error hidden">
+                        <text class="errtitle">404! Not found!..<br></text>
+                        <text class="errtext">That means you've typed the link incorrectly or this page is doesn't even exist. Or you might were trying to find this.</text>
+                    </div>
+                </div>
+                <div id="maincontent">
+				
+				</div>
+            </div>
+            <footer>
+                <div class="text">
+                    <div>
+                        <div class="text">
+                            <text><text class="bold">LiDNY</text> is here since <text class="bold">2021</text>.</text><br>
+                        </div>
+                        <div class="flex">
+                            <text class="bold">LiDNY</text><div class="separator"></div><text class="bold">2021 - 2024</text>
+                        </div>
+                    </div>
+                </div>
+                <div class="credits">
+                    <div>
+                        <div class="flex">
+                            <text>Website coded by <a class="bold" href="https://youtube.com/@wixetech" target="_blank">Wixetech</a>.</text>
+                            <div class="separator"></div>
+                            <text>Website designed by <a class="bold" href="https://youtube.com/@sonicpika._." target="_blank">SonicPika</a> and <a class="bold" href="https://youtube.com/@wixetech" target="_blank">Wixetech</a>.</text>
+                            <div class="separator"></div>
+                            <text>Website hosted by <a class="bold" href="https://youtube.com/@katanium" target="_blank">Katanium</a>.</text>
+                        </div>
+                        <text class="koteykawashere" style="font-size: 10px; opacity: 0.3;">Koteyka was here...</text>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="sorrybutyourscreentoosmall" class="hidden">
+            <text>We are sorry, but your window is too small to view this page.</text>
+        </div>
+    </body>
+</html>
